@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "The Hungry Bear"
 title_separator          : "-"
-subtitle                 : "quenching my hunger for knowledge" # site tagline that appears below site title in masthead
+subtitle                 : "" # site tagline that appears below site title in masthead
 name                     : "Kshitij Dani"
 description              : "I use this site to post about new things that I learn about in our constantly ever changing world"
 url                      : "https://KshitijDani.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Kshitij Dani"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am currently a Software Engineer working with Microsoft India"
+  bio              : "I am 23 year old Bangalorean who loves food and other stuff"
   location         : "Bangalore"
   email            :
   links:

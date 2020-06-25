@@ -3,8 +3,6 @@ layout: single
 title:  "I'm a hungry bear"
 ---
 
-Hi,
-
 I'm getting really bored at home, so I decided, why not write about something. And then I thought, how would I keep it with me forever (cloud?). And then I thought what can I do to make this a learning experience. So I decided to try out this an exercise, just writing about random stuff that I come accross while browsing the internet.
 
 I like learning about new things, but I'm not very good at converying them to other people. So, I'm also going to use this medium as a way of self-improvement. 
