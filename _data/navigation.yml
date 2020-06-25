@@ -3,10 +3,21 @@ main:
    - title: "Home"
      url: https://kshitijdani.github.io/
    - title: "Bio"
-     url: https://mmistakes.github.io/minimal-mistakes/bio/
+     url: https://kshitijdani.github.io/bio/
    - title: "Posts"
      url: /posts/
+   - title: "CV"
+     url: "/cv/"
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+docs:
+  - title: "Home"
+     url: https://kshitijdani.github.io/
+   - title: "Bio"
+     url: https://kshitijdani.github.io/bio/
+   - title: "Posts"
+     url: /posts/
+   - title: "CV"
+     url: "/cv/"
