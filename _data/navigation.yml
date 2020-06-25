@@ -2,16 +2,12 @@
 main:
    - title: "Home"
      url: https://kshitijdani.github.io/
-   - title: "Bio"
-     url: https://kshitijdani.github.io/bio/
    - title: "Posts"
      url: /posts/
    - title: "CV"
      url: "/cv/"
    - title: "About"
      url: "/about/"
-   - title: "About Me"
-     url: https://kshitijdani.github.io/bio/about/
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
