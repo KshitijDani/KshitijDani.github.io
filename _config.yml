@@ -18,12 +18,12 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 locale                   : "en-US"
 title                    : "Thoughts of an 8Ball"
 title_separator          : "-"
-subtitle                 : "Random Articles about my thoughts"# site tagline that appears below site title in masthead
+subtitle                 : "random articles about my thoughts"# site tagline that appears below site title in masthead
 name                     : "Kshitij Dani"
 description              : "Thoughts of an 8Ball"
 url                      : "https://KshitijDani.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "KshitijDani/KshitijDani.github.io"# GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
