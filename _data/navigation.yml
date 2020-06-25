@@ -2,8 +2,12 @@
 main:
    - title: "Home"
      url: https://kshitijdani.github.io/
-   - title: "Posts"
-     url: /posts/
+   - title: "Food"
+     url: /food/
+   - title: "Politics"
+     url: /politics/
+   - title: "Random"
+     url: /random/
    - title: "CV"
      url: "/cv/"
    - title: "About"
