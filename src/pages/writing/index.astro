@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostRow from '../../components/PostRow.astro';
+const posts = (await getCollection('writing'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout title="Writing" description="Writing by Kshitij Dani on technology, life, culture, and whatever he is trying to understand next.">
+  <header class="page-intro">
+    <div class="shell page-intro-grid">
+      <div>
+        <p class="eyebrow">Writing</p>
+        <h1>Notes, ideas, and things I’m learning.</h1>
+      </div>
+      <p>
+        This archive started in 2020. The early posts remain here in their original voice; new writing will expand toward engineering, AI systems, security, and research.
+      </p>
+    </div>
+  </header>
+  <section class="page-section">
+    <div class="shell post-list">
+      {posts.map((post) => <PostRow post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

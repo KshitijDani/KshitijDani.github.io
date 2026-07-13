@@ -1,0 +1,19 @@
+---
+import { profile } from '../data/profile';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <p class="footer-callout">Have an interesting problem?</p>
+      <a class="footer-email" href={`mailto:${profile.email}`}>Let’s talk.</a>
+    </div>
+    <div class="footer-links" aria-label="Social links">
+      <a href={profile.github} rel="me">GitHub</a>
+      <a href={profile.linkedin} rel="me">LinkedIn</a>
+      <a href="/writing/rss.xml">RSS</a>
+    </div>
+    <p class="footer-meta">© {year} Kshitij Dani · Built with care in Seattle.</p>
+  </div>
+</footer>

@@ -1,0 +1,58 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('work');
+  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: project.data.title,
+  description: project.data.description,
+  creator: {
+    '@type': 'Person',
+    name: 'Kshitij Dani',
+    url: 'https://kshitijdani.github.io',
+  },
+  keywords: project.data.tags.join(', '),
+  url: new URL(`/work/${project.id}/`, Astro.site).toString(),
+  sameAs: project.data.repo,
+};
+---
+
+<BaseLayout title={project.data.title} description={project.data.description} schema={schema}>
+  <header class="work-header">
+    <div class="shell">
+      <p class="eyebrow"><a class="back-link" href="/work/">← Selected work</a></p>
+      <h1>{project.data.title}</h1>
+      <div class="work-header-grid">
+        <p>{project.data.description}</p>
+        <p><strong>{project.data.impact}</strong></p>
+      </div>
+      <div class="work-meta-grid">
+        <div><span>Organization</span><strong>{project.data.organization}</strong></div>
+        <div><span>Role</span><strong>{project.data.role}</strong></div>
+        <div><span>Period</span><strong>{project.data.period}</strong></div>
+        <div>
+          <span>Source</span>
+          {project.data.repo ? <a href={project.data.repo}>View repository ↗</a> : <strong>Résumé-level details</strong>}
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="shell work-prose-wrap">
+    <aside class="work-aside">
+      <p class="eyebrow">Focus areas</p>
+      <ul class="tag-list">
+        {project.data.tags.map((tag: string) => <li>{tag}</li>)}
+      </ul>
+    </aside>
+    <div class="prose"><Content /></div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout title="About" description="About Kshitij Dani, a software engineer and AI systems researcher based in Seattle.">
+  <header class="page-intro">
+    <div class="shell page-intro-grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h1>Engineer, researcher, and persistent question-asker.</h1>
+      </div>
+      <p>
+        I care about software that earns trust through clear decisions, careful evaluation, and reliable operation—not just an impressive demo.
+      </p>
+    </div>
+  </header>
+
+  <section class="page-section">
+    <div class="shell about-grid">
+      <img class="about-photo" src="/images/kshitij-dani.jpg" width="460" height="460" alt="Portrait of Kshitij Dani beneath cherry blossoms" />
+      <div class="about-copy">
+        <p>
+          I’m a software engineer from Bangalore, now based in Seattle and pursuing an M.S. in Information Management at the University of Washington.
+        </p>
+        <p>
+          Before graduate school, I spent five years at Microsoft working across MileIQ and Viva Insights. I owned backend services, operated cloud infrastructure, built Microsoft 365 experiences at substantial scale, and worked on the less-visible foundations—authentication, certificates, service boundaries, and observability—that keep products dependable.
+        </p>
+        <p>
+          At UW’s eScience Institute and Scientific Software Engineering Center, I’m applying that systems perspective to AI. My current work includes agents that preserve engineering context across collaboration tools and evaluation frameworks for conversational systems in sensitive domains such as mental health.
+        </p>
+        <p>
+          I’m most interested in the gap between a model capability and a trustworthy product: how agents behave under ambiguity, where systems fail, what evidence we use to evaluate them, and how human judgment stays in the loop.
+        </p>
+        <p>
+          Away from a terminal, I listen to djent and metal, follow Formula 1, cricket, and strongman, and am usually thinking about what to eat next. This site started as “The Hungry Bear,” a small blog for whatever I was learning. That curiosity is still the point.
+        </p>
+        <div class="about-details">
+          <div>
+            <h3>Currently</h3>
+            <p>Graduate researcher at UW eScience Institute · SSEC</p>
+          </div>
+          <div>
+            <h3>Based in</h3>
+            <p>{profile.location}</p>
+          </div>
+          <div>
+            <h3>Find me</h3>
+            <p><a href={profile.github}>GitHub</a> · <a href={profile.linkedin}>LinkedIn</a></p>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

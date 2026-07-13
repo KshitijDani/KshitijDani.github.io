@@ -1,0 +1,162 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PostRow from '../components/PostRow.astro';
+import { capabilities, experiences, profile, proofPoints } from '../data/profile';
+
+const projects = (await getCollection('work'))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+const posts = (await getCollection('writing'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateModified: '2026-07-13',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://kshitijdani.github.io/#kshitij-dani',
+    name: profile.name,
+    givenName: profile.givenName,
+    url: 'https://kshitijdani.github.io',
+    image: 'https://kshitijdani.github.io/images/kshitij-dani.jpg',
+    jobTitle: 'Software Engineer and Graduate Researcher',
+    description: profile.shortBio,
+    homeLocation: { '@type': 'Place', name: profile.location },
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'University of Washington' },
+      { '@type': 'CollegeOrUniversity', name: 'BITS Pilani' },
+    ],
+    worksFor: { '@type': 'Organization', name: 'University of Washington eScience Institute' },
+    knowsAbout: [
+      'AI agents',
+      'Large language models',
+      'Distributed systems',
+      'Backend engineering',
+      'Cloud computing',
+      'Application security',
+      'LLM evaluation',
+    ],
+    sameAs: [profile.github, profile.linkedin],
+  },
+};
+---
+
+<BaseLayout schema={schema}>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Software engineer · AI systems researcher</p>
+        <h1 class="display-title">I build systems that are <em>useful, secure,</em> and ready to scale.</h1>
+        <p class="hero-intro">
+          I’m Kshitij, a systems-focused engineer in Seattle. I spent five years shipping backend platforms at Microsoft and now build AI agents and evaluation systems at UW’s eScience Institute.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/work/">Explore selected work</a>
+          <a class="button" href="/kshitij-dani-resume.pdf">Download résumé</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="/images/kshitij-dani.jpg" width="460" height="460" alt="Kshitij Dani standing in front of cherry blossoms" />
+        <p class="hero-status">Graduate researcher in Seattle, WA</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Selected impact">
+    <div class="shell proof-grid">
+      {proofPoints.map((point) => (
+        <div class="proof-item">
+          <strong>{point.value}</strong>
+          <span>{point.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Engineering with evidence.</h2>
+        </div>
+        <p>
+          A selection of production systems, research prototypes, and agentic workflows—each framed around the problem, the decisions, and the outcome.
+        </p>
+      </div>
+      <div class="projects-list">
+        {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="capabilities-section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">What I bring</p>
+          <h2>From model behavior to production reliability.</h2>
+        </div>
+        <p>
+          My work sits where AI meets systems engineering: turning promising capabilities into software that can be evaluated, operated, secured, and trusted.
+        </p>
+      </div>
+      <div class="capability-grid">
+        {capabilities.map((capability) => (
+          <article class="capability-card">
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+            <ul class="tag-list" aria-label={`${capability.title} skills`}>
+              {capability.skills.map((skill) => <li>{skill}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="experience-preview">
+    <div class="shell timeline-preview">
+      <div class="timeline-lead">
+        <p class="eyebrow">Experience</p>
+        <h2>Built across research and industry.</h2>
+        <p>AI research at UW, enterprise systems at Microsoft, and conversational AI at Avaamo.</p>
+        <a class="text-link" href="/experience/">Full experience <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="timeline-list">
+        {experiences.slice(0, 4).map((experience) => (
+          <article class="timeline-item">
+            <time>{experience.period}</time>
+            <div>
+              <h3>{experience.organization}</h3>
+              <p class="timeline-role">{experience.role}</p>
+              <p>{experience.summary}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="writing-preview">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Writing</p>
+          <h2>Notes from a curious mind.</h2>
+        </div>
+        <p>
+          The blog began in 2020 as a place to think in public. It remains an archive for technical notes, observations, and the ideas I want to understand better.
+        </p>
+      </div>
+      <div class="post-list">
+        {posts.map((post) => <PostRow post={post} />)}
+      </div>
+      <p><a class="text-link" href="/writing/">Browse all writing <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+</BaseLayout>

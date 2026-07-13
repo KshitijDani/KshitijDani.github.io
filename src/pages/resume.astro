@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { awards, capabilities, education, experiences, profile } from '../data/profile';
+---
+
+<BaseLayout title="Résumé" description="Résumé for Kshitij Dani — software engineer and AI systems researcher.">
+  <header class="page-intro">
+    <div class="shell page-intro-grid">
+      <div>
+        <p class="eyebrow">Résumé</p>
+        <h1>Systems engineering for the AI era.</h1>
+      </div>
+      <p>
+        A text-first version for quick scanning and search. The formatted April 2026 résumé is also available as a PDF.
+      </p>
+    </div>
+  </header>
+
+  <section class="page-section">
+    <div class="shell resume-grid">
+      <aside class="resume-sidebar">
+        <p>{profile.shortBio}</p>
+        <p><a class="button button-primary" href={profile.resume}>Download PDF</a></p>
+        <p><a href={`mailto:${profile.email}`}>{profile.email}</a><br />{profile.location}</p>
+        <p><a href={profile.github}>GitHub ↗</a><br /><a href={profile.linkedin}>LinkedIn ↗</a></p>
+      </aside>
+
+      <div>
+        <section class="resume-section">
+          <h2>Experience</h2>
+          {experiences.map((experience) => (
+            <article class="resume-entry">
+              <div class="resume-entry-header">
+                <div><h3>{experience.role} · {experience.organization}</h3></div>
+                <span>{experience.period}</span>
+              </div>
+              <p>{experience.summary}</p>
+            </article>
+          ))}
+        </section>
+
+        <section class="resume-section">
+          <h2>Education</h2>
+          {education.map((item) => (
+            <article class="resume-entry">
+              <div class="resume-entry-header">
+                <div><h3>{item.degree} · {item.school}</h3></div>
+                <span>{item.period}</span>
+              </div>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </section>
+
+        <section class="resume-section">
+          <h2>Capabilities</h2>
+          {capabilities.map((item) => (
+            <article class="resume-entry">
+              <h3>{item.title}</h3>
+              <p>{item.skills.join(' · ')}</p>
+            </article>
+          ))}
+        </section>
+
+        <section class="resume-section">
+          <h2>Recognition</h2>
+          {awards.map((award) => (
+            <article class="resume-entry">
+              <div class="resume-entry-header">
+                <div><h3>{award.title} · {award.organization}</h3></div>
+                <span>{award.year}</span>
+              </div>
+              <p>{award.detail}</p>
+            </article>
+          ))}
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

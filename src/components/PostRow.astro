@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+const { post } = Astro.props as { post: CollectionEntry<'writing'> };
+const date = post.data.publishedAt.toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<article class="post-row">
+  <a href={`/writing/${post.id}/`}>
+    <time datetime={post.data.publishedAt.toISOString()}>{date}</time>
+    <div>
+      <h3>{post.data.title}</h3>
+      <p>{post.data.description}</p>
+    </div>
+    <span aria-hidden="true">↗</span>
+  </a>
+</article>
