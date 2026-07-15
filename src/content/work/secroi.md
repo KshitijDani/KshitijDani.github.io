@@ -4,7 +4,7 @@ kicker: AI-assisted application security
 description: A security analysis workflow that scans public repositories, identifies attack vectors, and produces severity-ranked remediation guidance.
 period: 2025 — 2026
 organization: University of Washington
-role: Designer & engineer
+role: Engineer
 impact: Repository to prioritized security report
 tags: [Python, FastAPI, LangGraph, React, LLMs]
 featured: true
