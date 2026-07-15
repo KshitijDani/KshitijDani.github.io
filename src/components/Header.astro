@@ -1,5 +1,10 @@
 ---
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { profile } from '../data/profile';
+
 const { pathname } = Astro.url;
+const githubIcon = { width: faGithub.icon[0], height: faGithub.icon[1], path: faGithub.icon[4] as string };
+const linkedinIcon = { width: faLinkedinIn.icon[0], height: faLinkedinIn.icon[1], path: faLinkedinIn.icon[4] as string };
 const links = [
   { href: '/work/', label: 'Work' },
   { href: '/experience/', label: 'Experience' },
@@ -12,7 +17,7 @@ const isActive = (href: string) => pathname === href || (href !== '/' && pathnam
 <header class="site-header">
   <div class="shell header-inner">
     <a class="wordmark" href="/" aria-label="Kshitij Dani — home">
-      <span aria-hidden="true">KD</span>
+      Kshitij Dani
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="sr-only">Toggle navigation</span>
@@ -23,6 +28,14 @@ const isActive = (href: string) => pathname === href || (href !== '/' && pathnam
       {links.map((link) => (
         <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>
       ))}
+      <div class="nav-socials" aria-label="Social profiles">
+        <a class="social-link" href={profile.github} target="_blank" rel="me noopener noreferrer" aria-label="Kshitij Dani on GitHub" title="GitHub">
+          <svg viewBox={`0 0 ${githubIcon.width} ${githubIcon.height}`} role="img" aria-hidden="true"><path d={githubIcon.path}></path></svg>
+        </a>
+        <a class="social-link" href={profile.linkedin} target="_blank" rel="me noopener noreferrer" aria-label="Kshitij Dani on LinkedIn" title="LinkedIn">
+          <svg viewBox={`0 0 ${linkedinIcon.width} ${linkedinIcon.height}`} role="img" aria-hidden="true"><path d={linkedinIcon.path}></path></svg>
+        </a>
+      </div>
       <a class="nav-resume" href="/resume/">Résumé</a>
     </nav>
   </div>
