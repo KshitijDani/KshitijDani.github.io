@@ -27,6 +27,7 @@ const work = defineCollection({
     tags: z.array(z.string()),
     featured: z.boolean().default(false),
     repo: z.url().optional(),
+    paper: z.url().optional(),
     order: z.number().default(99),
   }),
 });

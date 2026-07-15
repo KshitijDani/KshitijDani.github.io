@@ -9,6 +9,7 @@ impact: Meetings to actionable engineering context
 tags: [AI agents, GitHub Actions, LiteLLM, FastAPI, React]
 featured: true
 repo: https://github.com/KshitijDani/Terminology-Agent
+paper: https://arxiv.org/abs/2607.08043
 order: 2
 ---
 

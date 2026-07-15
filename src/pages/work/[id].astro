@@ -22,7 +22,7 @@ const schema = {
   },
   keywords: project.data.tags.join(', '),
   url: new URL(`/work/${project.id}/`, Astro.site).toString(),
-  sameAs: project.data.repo,
+  sameAs: [project.data.repo, project.data.paper].filter(Boolean),
 };
 ---
 
@@ -40,8 +40,12 @@ const schema = {
         <div><span>Role</span><strong>{project.data.role}</strong></div>
         <div><span>Period</span><strong>{project.data.period}</strong></div>
         <div>
-          <span>Source</span>
-          {project.data.repo ? <a href={project.data.repo}>View repository ↗</a> : <strong>Résumé-level details</strong>}
+          <span>Links</span>
+          <div class="work-links">
+            {project.data.repo && <a href={project.data.repo} target="_blank" rel="noopener noreferrer">View repository ↗</a>}
+            {project.data.paper && <a href={project.data.paper} target="_blank" rel="noopener noreferrer">Read arXiv paper ↗</a>}
+            {!project.data.repo && !project.data.paper && <strong>Résumé-level details</strong>}
+          </div>
         </div>
       </div>
     </div>
