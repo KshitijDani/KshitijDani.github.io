@@ -615,25 +615,26 @@ select {
 }
 
 .page-intro {
-  padding: clamp(72px, 10vw, 135px) 0 75px;
+  padding: clamp(70px, 8vw, 105px) 0 clamp(64px, 7vw, 90px);
   border-bottom: 1px solid var(--line);
   background: var(--paper-deep);
 }
 
 .page-intro-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
 .page-intro h1 {
-  max-width: 760px;
-  font-size: clamp(3.2rem, 8vw, 6.6rem);
+  max-width: 980px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
 }
 
-.page-intro p:last-child {
-  max-width: 390px;
+.page-intro-grid > p,
+.page-intro-grid > div:last-child p {
+  max-width: 760px;
   margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
