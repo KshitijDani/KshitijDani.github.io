@@ -399,6 +399,11 @@ select {
   padding: 100px 0;
 }
 
+/* Writing remains archived and routable, but is temporarily hidden from the homepage. */
+.writing-preview {
+  display: none;
+}
+
 .projects-list {
   border-top: 1px solid var(--ink);
 }
