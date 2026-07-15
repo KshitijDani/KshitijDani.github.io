@@ -335,24 +335,6 @@ select {
   filter: saturate(0.82) contrast(1.03);
 }
 
-.hero-status {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 18px 4px 0;
-  color: var(--muted);
-  font-size: 0.83rem;
-}
-
-.hero-status::before {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(31, 94, 255, 0.1);
-  content: '';
-}
-
 .proof {
   padding: 0 0 105px;
 }
