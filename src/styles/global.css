@@ -267,6 +267,16 @@ select {
   margin-bottom: 50px;
 }
 
+.projects-section .section-heading {
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+  align-items: start;
+  gap: clamp(48px, 7vw, 88px);
+}
+
+.projects-section .section-heading > p {
+  max-width: 430px;
+}
+
 .section-heading h2,
 .page-intro h1 {
   margin: 0;
@@ -1104,6 +1114,11 @@ select {
   .timeline-preview,
   .experience-group,
   .work-prose-wrap {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .projects-section .section-heading {
     grid-template-columns: 1fr;
     gap: 25px;
   }
