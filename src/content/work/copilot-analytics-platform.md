@@ -1,5 +1,5 @@
 ---
-title: Copilot analytics platform
+title: Microsoft Copilot Dashboard
 kicker: Enterprise AI analytics
 description: Backend foundations for an enterprise dashboard that helps leaders understand Copilot adoption, deployment, and organizational impact.
 period: 2023 — 2025
