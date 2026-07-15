@@ -1,5 +1,5 @@
 ---
-title: Research engineering agent
+title: "Aleena: Alignment Agent for Engineering"
 kicker: Agentic software engineering
 description: An LLM-powered collaboration layer that turns project conversations into durable context, decisions, issues, and review support.
 period: 2025 — Present
