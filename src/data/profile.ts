@@ -41,8 +41,10 @@ export const capabilities = [
 
 export const experiences = [
   {
-    organization: 'University of Washington eScience Institute · SSEC',
-    role: 'Graduate Researcher — AI Systems',
+    id: 'uw-ssec',
+    organization: 'University of Washington',
+    team: 'SSEC – eScience Institute',
+    role: 'Graduate Researcher',
     period: '2025 — Present',
     location: 'Seattle, WA',
     summary:
@@ -56,7 +58,9 @@ export const experiences = [
     tags: ['AI agents', 'LLM evaluation', 'FastAPI', 'React', 'GitHub workflows'],
   },
   {
-    organization: 'Microsoft · Viva Insights',
+    id: 'microsoft-viva-insights-2023',
+    organization: 'Microsoft',
+    team: 'Viva Insights',
     role: 'Software Engineer II',
     period: '2023 — 2025',
     location: 'Bangalore, India',
@@ -71,7 +75,9 @@ export const experiences = [
     tags: ['C#', '.NET', 'Azure', 'Distributed systems', 'Security'],
   },
   {
-    organization: 'Microsoft · Viva Insights',
+    id: 'microsoft-viva-insights-2021',
+    organization: 'Microsoft',
+    team: 'Viva Insights',
     role: 'Software Engineer',
     period: '2021 — 2023',
     location: 'Bangalore, India',
@@ -85,7 +91,9 @@ export const experiences = [
     tags: ['C#', 'Microsoft 365', 'Authentication', 'Backend services'],
   },
   {
-    organization: 'Microsoft · MileIQ',
+    id: 'microsoft-mileiq',
+    organization: 'Microsoft',
+    team: 'MileIQ',
     role: 'Software Engineer',
     period: '2020 — 2021',
     location: 'Bangalore, India',
@@ -99,7 +107,9 @@ export const experiences = [
     tags: ['Python', 'Django', 'Azure Kubernetes', 'CI/CD', 'New Relic'],
   },
   {
+    id: 'avaamo-ai',
     organization: 'Avaamo AI',
+    team: null,
     role: 'Software Engineer Intern',
     period: 'Jan — Jun 2020',
     location: 'Bangalore, India',
@@ -113,7 +123,9 @@ export const experiences = [
     tags: ['JavaScript', 'Node.js', 'AWS Lambda', 'Conversational AI'],
   },
   {
-    organization: 'Microsoft · MyAnalytics',
+    id: 'microsoft-myanalytics',
+    organization: 'Microsoft',
+    team: 'MyAnalytics',
     role: 'Software Engineer Intern',
     period: 'May — Aug 2019',
     location: 'Hyderabad, India',

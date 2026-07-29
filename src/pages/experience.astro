@@ -8,7 +8,7 @@ import { awards, education, experiences } from '../data/profile';
     <div class="shell page-intro-grid">
       <div>
         <p class="eyebrow">Experience</p>
-        <h1>Five years of production engineering, now applied to AI.</h1>
+        <h1>Research and industry experience.</h1>
       </div>
       <div>
       <p>
@@ -21,13 +21,14 @@ import { awards, education, experiences } from '../data/profile';
   <section class="page-section">
     <div class="shell">
       {experiences.map((experience) => (
-        <article class="experience-group">
+        <article id={experience.id} class="experience-group">
           <div class="experience-sticky">
             <p class="period">{experience.period}</p>
             <p class="period">{experience.location}</p>
           </div>
           <div class="experience-content">
             <h2>{experience.organization}</h2>
+            {experience.team && <p class="experience-team">{experience.team}</p>}
             <p class="experience-role">{experience.role}</p>
             <p class="experience-summary">{experience.summary}</p>
             <ul>

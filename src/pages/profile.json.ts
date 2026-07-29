@@ -10,8 +10,10 @@ export function GET() {
     resume: new URL(profile.resume, 'https://kshitijdani.github.io').toString(),
     proofPoints,
     capabilities,
-    experience: experiences.map(({ organization, role, period, summary, tags }) => ({
+    experience: experiences.map(({ id, organization, team, role, period, summary, tags }) => ({
+      id,
       organization,
+      team,
       role,
       period,
       summary,

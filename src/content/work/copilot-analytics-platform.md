@@ -1,7 +1,7 @@
 ---
 title: Microsoft Copilot Dashboard
 kicker: Enterprise AI analytics
-description: Backend foundations for an enterprise dashboard that helps leaders understand Copilot adoption, deployment, and organizational impact.
+description: Backend for an Microsoft's Copilot Dashboard that helps enterprise leaders understand Copilot adoption, deployment, and organizational impact.
 period: 2023 — 2025
 organization: Microsoft · Viva Insights
 role: Software Engineer II
