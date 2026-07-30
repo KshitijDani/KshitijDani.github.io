@@ -125,10 +125,12 @@ const schema = {
       <div class="awards-grid">
         {awards.map((award) => (
           <article class="award-card">
-            <div class="award-logo" aria-hidden="true">
-              <svg viewBox={`0 0 ${microsoftIcon.width} ${microsoftIcon.height}`}><path d={microsoftIcon.path}></path></svg>
+            <div class="award-header">
+              <div class="award-logo" aria-hidden="true">
+                <svg viewBox={`0 0 ${microsoftIcon.width} ${microsoftIcon.height}`}><path d={microsoftIcon.path}></path></svg>
+              </div>
+              <h3>{award.title}</h3>
             </div>
-            <h3>{award.title}</h3>
             <p class="award-meta">{award.organization} · {award.year}</p>
             <p class="award-detail">{award.detail}</p>
           </article>
