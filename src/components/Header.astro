@@ -27,15 +27,15 @@ const isActive = (href: string) => pathname === href || (href !== '/' && pathnam
       {links.map((link) => (
         <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>{link.label}</a>
       ))}
-      <div class="nav-socials" aria-label="Social profiles">
-        <a class="social-link" href={profile.github} target="_blank" rel="me noopener noreferrer" aria-label="Kshitij Dani on GitHub" title="GitHub">
-          <svg viewBox={`0 0 ${githubIcon.width} ${githubIcon.height}`} role="img" aria-hidden="true"><path d={githubIcon.path}></path></svg>
+      <div class="nav-social-links" aria-label="Social profiles">
+        <a href={profile.github} target="_blank" rel="me noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox={`0 0 ${githubIcon.width} ${githubIcon.height}`} aria-hidden="true"><path d={githubIcon.path}></path></svg>
         </a>
-        <a class="social-link" href={profile.linkedin} target="_blank" rel="me noopener noreferrer" aria-label="Kshitij Dani on LinkedIn" title="LinkedIn">
-          <svg viewBox={`0 0 ${linkedinIcon.width} ${linkedinIcon.height}`} role="img" aria-hidden="true"><path d={linkedinIcon.path}></path></svg>
+        <a href={profile.linkedin} target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox={`0 0 ${linkedinIcon.width} ${linkedinIcon.height}`} aria-hidden="true"><path d={linkedinIcon.path}></path></svg>
         </a>
       </div>
-      <a class="nav-resume" href="/resume/">Résumé</a>
+      <a class="nav-resume" href="/resume/">Résumé <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>

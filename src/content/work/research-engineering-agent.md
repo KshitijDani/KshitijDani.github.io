@@ -1,7 +1,7 @@
 ---
-title: "Aleena: Alignment Agent for Engineering"
+title: "Aleena: Alignment Agent for Collaboration"
 kicker: Agentic software engineering
-description: An LLM-powered collaboration layer that turns project conversations into durable context, decisions, issues, and review support.
+description: An agent that turns project interactions into durable and reviewable artifacts that sustain project alignment by storing context, decisions and issues.
 period: 2025 — Present
 organization: UW eScience Institute · SSEC
 role: Graduate Researcher

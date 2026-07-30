@@ -8,7 +8,7 @@ import { awards, capabilities, education, experiences, profile } from '../data/p
     <div class="shell page-intro-grid">
       <div>
         <p class="eyebrow">Résumé</p>
-        <h1>Systems engineering for the AI era.</h1>
+        <h1>Kshitij Dani — Résumé.</h1>
       </div>
       <p>
         A text-first version for quick scanning and search. The formatted April 2026 résumé is also available as a PDF.
@@ -34,6 +34,7 @@ import { awards, capabilities, education, experiences, profile } from '../data/p
                 <div><h3>{experience.role} · {experience.organization}</h3></div>
                 <span>{experience.period}</span>
               </div>
+              {experience.team && <p class="resume-team">{experience.team}</p>}
               <p>{experience.summary}</p>
             </article>
           ))}
